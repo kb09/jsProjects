@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+
+#green{
+
+    background-color: green;
+
+}
+
+
+#red{
+
+    background-color: red;
+
+}
+
+
+#blue{
+
+    background-color: blue;
+
+}
+
+
+/* #random{
+
+    background-color: grey;
+
+} */
+
+button{
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+}
