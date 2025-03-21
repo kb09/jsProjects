@@ -15,8 +15,24 @@ const usedIndexes = new Set()
 const quoteElement = document.getElementById("quote")
 
 function generateQuote(){
-   const randomIdx = Math.floor(Math.random() * quotes.length) // get random index
-   const quote = quotes[randomIdx] // use random index to get quote from array 
+    if(usedIndexes.size >= quotes.length){
+        usedIndexes.clear() // reset usedIndexes when we have gone through all quotes
+    }
+    
+    while(true){
+        const randomIdx = Math.floor(Math.random() * quotes.length) // get random index
+        if (usedIndexes.has(randomIdx))
+            {
+                continue
 
-   quoteElement.innerHTML = quote;
+            } 
+        
+        const quote = quotes[randomIdx] // use random index to get quote from array 
+        quoteElement.innerHTML = quote;
+        
+        usedIndexes.add(randomIdx)
+        break;
+    }
+
+
 }
